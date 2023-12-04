@@ -1,6 +1,9 @@
 FROM node
 
+RUN mkdir /client
 WORKDIR /client
+
+ENV PATH /client:$PATH
 
 COPY package*.json /client/
 
