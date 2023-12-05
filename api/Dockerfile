@@ -1,15 +1,12 @@
 FROM node
 
-RUN mkdir /app
 WORKDIR /app
 
-ENV PATH /client/node_modules/.bin:$PATH
-
-COPY package*.json /app
+COPY package*.json ./
 
 RUN npm install
 
-COPY . /app
+COPY . .
 
 EXPOSE 4000
 CMD [ "npm", "start"]
